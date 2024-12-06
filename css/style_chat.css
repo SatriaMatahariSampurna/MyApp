@@ -1,0 +1,113 @@
+/* Styling untuk tata letak halaman */
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #34495e;
+}
+
+.friend-sidebar {
+    width: 250px;
+    background-color: #ecf0f1;
+    border-left: 2px solid #bdc3c7;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.friend-sidebar h5 {
+    margin: 15px;
+    color: #2c3e50;
+}
+
+.friend-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.friend-sidebar .list-group-item {
+    cursor: pointer;
+    border: none;
+    padding: 10px 15px;
+}
+
+.friend-sidebar .list-group-item:hover {
+    background-color: #dfe6e9;
+}
+
+.chat-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #ecf0f1;
+    height: 100vh;
+}
+
+.chat-box {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input {
+    padding: 10px;
+    border-top: 1px solid #bdc3c7;
+    background-color: white;
+}
+
+/* Styling untuk pesan chat */
+.message {
+    max-width: 70%;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.message.me {
+    background-color: #3498db;
+    color: white;
+    margin-left: auto;
+    text-align: right;
+}
+
+.message.friend {
+    background-color: #bdc3c7;
+    color: black;
+    margin-right: auto;
+    text-align: left;
+}
