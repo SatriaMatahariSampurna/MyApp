@@ -21,7 +21,6 @@ if (isset($_GET['delete_user'])) {
     }
 }
 
-
 $query = "SELECT * FROM users";
 $result = mysqli_query($conn, $query);
 ?>
@@ -32,51 +31,23 @@ $result = mysqli_query($conn, $query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style_admin.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="css/style_dasadmin.css" rel="stylesheet">
 </head>
 <body>
     <div class="sidebar">
-        <div class="logo">Admin Dashboard</div>
+        <div class="logo">Dashboard Admin</div>
         <ul>
-            <li><a href="dashboard_admin.php">Dashboard</a></li>
-            <li><a href="logout.php">Logout</a></li>
+            <li><a href="dashboard_admin.php"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="data_user.php"><i class="fas fa-users"></i> Data User</a></li>
+            <li><a href="admin_topup.php"><i class="fas fa-wallet"></i>Data Top-Up User</a></li>
+            <li><a href="data_transaksi.php"><i class="fas fa-exchange-alt"></i> Riwayat Transfer</a></li>
+            <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
     </div>
 
     <div class="content">
-        <h2>Data Pengguna</h2>
-
-
-
-        <!-- Tabel Data Pengguna -->
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Nama</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Alamat</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($user = mysqli_fetch_assoc($result)): ?>
-                    <tr>
-                        <td><?= $user['name'] ?></td>
-                        <td><?= $user['username'] ?></td>
-                        <td><?= $user['email'] ?></td>
-                        <td><?= $user['alamat'] ?></td>
-
-                        <td>
-                            <a href="edit_user.php?id=<?= $user['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
-                            <a href="dashboard_admin.php?delete_user=<?= $user['id'] ?>" 
-                               class="btn btn-danger btn-sm" 
-                               onclick="return confirm('Yakin ingin menghapus pengguna ini?')">Hapus</a>
-                        </td>
-                    </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
+        <h2>Selamat Datang di Halaman Admin</h2>
     </div>
 </body>
 </html>
